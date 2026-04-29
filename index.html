@@ -179,30 +179,38 @@
 
 
 
-<section id="contact" class="container text-center">
-    <h2>📞 Contact Information</h2>
+<h3 class="mt-4">📍 Nagpur Location</h3>
 
-    <p>Email: <a href="mailto:info@rtmnu.edu">info@rtmnu.edu</a></p>
-    <p>Phone: 0712-2533452</p>
-    <p>Website: www.rtmnuresults.org</p>
+    <button onclick="getNagpurLocation()" class="btn btn-success mb-3">
+        Show Nagpur Location
+    </button>
 
-        <h3>📍 Location</h3>
-	<center>
-        <iframe 
-            src="https://maps.google.com/maps?q=Nagpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            width="70%" height="300">
-        </iframe>
-	</center>
-    </section>
+    <p id="locationText" class="fw-bold"></p>
 
-    <hr>
+    <iframe id="mapFrame" width="80%" height="300" class="rounded shadow"></iframe>
+</section>
 
-    <footer>
-        <center>
-            <p>© RTMNU - Computer Science Department</p>
-            <p><b>Made by khushbu</b></p>
-        </center>
-    </footer>
+<footer>
+    <p>© RTMNU - Computer Science Department</p>
+    <p><b>Made by Khushbu</b></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script>
+function getNagpurLocation() {
+    let lat = 21.1458;
+    let lon = 79.0882;
+
+    document.getElementById("locationText").innerHTML =
+        "City: Nagpur | Latitude: " + lat + " | Longitude: " + lon;
+
+    document.getElementById("mapFrame").src =
+        "https://maps.google.com/maps?q=" + lat + "," + lon + "&z=12&output=embed";
+}
+</script>
+
 
 
 
